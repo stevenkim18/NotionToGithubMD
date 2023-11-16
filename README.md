@@ -48,3 +48,6 @@ python3 main.py https://www.notion.so/{username}/{page_id}
 ## Demo
 ![demo720p](https://github.com/stevenkim18/NotionToGithubMD/assets/35272802/d53ee9d8-ee60-4a09-8684-9f9e8ecd6f42)
 
+## TODO
+- [] show github url after upload success
+- [] when output folder exsit delete first and then upload
