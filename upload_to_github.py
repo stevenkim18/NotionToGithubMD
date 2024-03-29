@@ -10,6 +10,7 @@ load_dotenv()
 
 github_username = os.environ.get('GITHUB_USER_NAME')
 github_repo_name = os.environ.get('GITHUB_REPO_NAME')
+github_branch_name = os.environ.get('GITHUB_BRANCH')
 folder_name = get_date()
 md_filename = f"{get_date()}.md"
 
@@ -23,6 +24,7 @@ def upload_to_github(encode_data, filename):
     data = {
         "message": f"{get_date()} TIL", 
         "content": encode_data.decode('utf-8'),
+        "branch": f"{github_branch_name}"
     }
 
     url = githubAPIURL
