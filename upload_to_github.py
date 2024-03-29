@@ -41,6 +41,9 @@ def upload_to_github(encode_data, filename):
         # sha는 github api에서 조회 가능합니다.
         if message == 'Invalid request.\n\n"sha" wasn\'t supplied.':
             print("이미 존재하는 파일 이름입니다!!")
+        # 401 Bad Credentials -> github 토큰 만료. 
+        print(f"상태 코드 : {response.status_code}")
+        print(f"메시지 : {response.json()}")
         loader.stop(f"❌ '{filename}' 업로드 실패!")
         exit_program()
 
