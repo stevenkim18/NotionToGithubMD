@@ -11,10 +11,15 @@ load_dotenv()
 github_username = os.environ.get('GITHUB_USER_NAME')
 github_repo_name = os.environ.get('GITHUB_REPO_NAME')
 github_branch_name = os.environ.get('GITHUB_BRANCH')
+folder_path = os.environ.get('FOLDER_PATH')
+image_path = os.environ.get('IMAGE_PATH')
 folder_name = get_date()
 md_filename = f"{get_date()}.md"
 
-githubAPIURL = f"https://api.github.com/repos/{github_username}/{github_repo_name}/contents/{folder_name}/"
+githubAPIURL = f"https://api.github.com/repos/{github_username}/{github_repo_name}/contents/{folder_path}{folder_name}/"
+
+def upload_image_to_github(encode_data, image_name):
+    upload_to_github(encode_data, f"{image_path}{image_name}")
 
 def upload_to_github(encode_data, filename):
     headers = {
